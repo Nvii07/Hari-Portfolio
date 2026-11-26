@@ -2,23 +2,44 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-background: oklch(1 0 0);
-  --color-foreground: oklch(0.145 0 0);
-  --color-muted-foreground: oklch(0.556 0 0);
-  --color-border: oklch(0.922 0 0);
-  --color-primary: oklch(0.205 0 0);
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface-muted: #ebe9e2;
+  --ink: #111214;
+  --muted: #5d6068;
+  --rule: rgba(17, 18, 20, 0.11);
+  --accent: #1b4dff;
+  --lime: #d9f26b;
 }
 
 .dark {
-  --color-background: oklch(0.145 0 0);
-  --color-foreground: oklch(0.985 0 0);
-  --color-muted-foreground: oklch(0.708 0 0);
-  --color-border: oklch(0.269 0 0);
-  --color-primary: oklch(0.985 0 0);
+  --bg: #0c0d10;
+  --surface: #15171c;
+  --surface-muted: #1e2128;
+  --ink: #f3f2ee;
+  --muted: #989ca6;
+  --rule: rgba(243, 242, 238, 0.12);
+  --accent: #5479ff;
+  --lime: #d9f26b;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: "Syne", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-mono-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
