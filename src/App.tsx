@@ -221,6 +221,18 @@ export default function App() {
         "Thanks for looking through my portfolio.\n\nFrom matchday visuals at Bengaluru FC and campaign creatives for BFC Soccer Schools to live cricket coverage at CricTracker and commercial retouching at SBL Knowledge Services, I care about sharp storytelling that holds up under deadline.\n\nReferees are available on request — reach me anytime at harivijay0077@gmail.com or +91 9003821751."
       }
       signature="Hariharan Sekar"
+      colors={{
+        paper: "#f4f3ef",
+        night: "#111111",
+        ink: "#111111",
+        pen: "#eb5939",
+      }}
+      fonts={{
+        href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Syne:wght@600;700;800&display=swap",
+        display: "'Syne', ui-sans-serif, system-ui, sans-serif",
+        hand: "Caveat, 'Bradley Hand', cursive",
+        body: "'DM Sans', ui-sans-serif, system-ui, sans-serif",
+      }}
     />
   )
 }
