@@ -183,23 +183,23 @@ const wSrc = (idx: number) => WORKS[idx % WORKS.length].src
 const DECK_IMG = [0, 1, 2, 3, 4, 5, 6, 7]
 // stage 2 deck: 1st creative, info card, five creatives
 const DECK2_IMG = [8, -1, 9, 10, 11, 12, 13]
-const AV_TOP = Array.from({ length: 16 }, (_, i) => i)
-const AV_BOT = Array.from({ length: 16 }, (_, i) => (i + 16) % WORKS.length)
-const WALL = [14, 15, 16, 17, 18, 19, 20, -1, 21, 22, 23, 24, 25, 26, 27]
+const AV_TOP = Array.from({ length: 16 }, (_, i) => i % 25)
+const AV_BOT = Array.from({ length: 16 }, (_, i) => (i + 9) % 25)
+const WALL = [14, 15, 16, 17, 18, 19, 20, -1, 21, 22, 23, 24, 0, 8, 6]
 const ARCHIVE = [
-  { idx: 0, t: "Bengaluru FC · Matchday" },
-  { idx: 25, t: "BFC Soccer Schools" },
-  { idx: 3, t: "JSW Sports · Creative" },
-  { idx: 26, t: "Grow With The Game" },
-  { idx: 6, t: "Pre-Match Editorial" },
-  { idx: 27, t: "Campaign Frame" },
-  { idx: 11, t: "Club Announcement" },
-  { idx: 28, t: "CricTracker · Cover" },
+  { idx: 8, t: "Palande Stays · Pop Art" },
+  { idx: 0, t: "Paint It Blue · Matchday" },
+  { idx: 19, t: "Away Day · Sarusajai" },
+  { idx: 21, t: "Clash in the Clouds" },
+  { idx: 2, t: "SAFF U20 · Illustrated" },
+  { idx: 6, t: "India · FIFA Friendly" },
+  { idx: 7, t: "Father's Day · Illustrated" },
+  { idx: 14, t: "Bengaluru FC · Creative" },
 ]
 const SLIDES = [
-  { idx: 25, alt: "BFC Soccer Schools — campaign visual" },
-  { idx: 26, alt: "Bengaluru FC — matchday creative" },
-  { idx: 27, alt: "Sports marketing — wide frame" },
+  { idx: 0, alt: "Paint It Blue — Bengaluru FC matchday poster" },
+  { idx: 19, alt: "Away Day — Bengaluru FC at Sarusajai Stadium" },
+  { idx: 21, alt: "A Clash in the Clouds — NorthEast United vs Bengaluru FC" },
 ]
 const CLIENTS = ["Bengaluru FC", "BFC Soccer Schools", "JSW Sports", "CricTracker", "SBL Knowledge", "Grow With The Game"]
 const NAV = ["Selected Work", "Start a project", "Experience", "Contact", "Process", "Archive"]
@@ -745,7 +745,7 @@ export default function EaselShowcaseTemplate({
           </div>
           <div className="ea-banner" data-rv>
             {SLIDES.map((s, i) => (
-              <img key={s.idx} src={pic(s.idx)} alt={i === slide ? s.alt : ""} className={i === slide ? "on" : ""} width={1400} height={560} draggable={false} />
+              <img key={s.idx} src={pic(s.idx)} alt={i === slide ? s.alt : ""} className={i === slide ? "on" : ""} width={1400} height={560} draggable={false} style={{ objectPosition: "50% 30%" }} />
             ))}
             <span className="ea-switch" aria-hidden="true">
               <i />
@@ -961,7 +961,7 @@ export default function EaselShowcaseTemplate({
               </article>
               <article className="ea-bcard ea-img" data-rv>
                 <div className="ea-photo">
-                  <img src={pic(29)} alt="CricTracker — live sports coverage" width={550} height={300} />
+                  <img src={pic(8)} alt="Palande Stays — pop-art player poster" width={550} height={300} style={{ objectPosition: "50% 25%" }} />
                 </div>
                 <h3 className="ea-h4">CricTracker — Live Sports Coverage</h3>
                 <p className="ea-small">Fast-turnaround social media graphics, event creatives and team branding within tight matchday publishing deadlines.</p>
@@ -973,7 +973,7 @@ export default function EaselShowcaseTemplate({
             <div className="ea-col ea-col-r">
               <article className="ea-bcard ea-img" data-rv>
                 <div className="ea-photo ea-blueph">
-                  <img src={pic(28)} alt="BFC Soccer Schools — Grow With The Game" width={550} height={300} />
+                  <img src={pic(21)} alt="A Clash in the Clouds — matchday campaign" width={550} height={300} style={{ objectPosition: "50% 35%" }} />
                 </div>
                 <h3 className="ea-h4">BFC Soccer Schools — Grow With The Game</h3>
                 <p className="ea-small">Marketing campaign creatives, posters and digital ads promoting football programmes, seasonal initiatives and enrolments.</p>
@@ -1144,7 +1144,7 @@ export default function EaselShowcaseTemplate({
                   </span>
                   CricTracker Live Coverage
                   <span className="ea-mthumbs">
-                    <img src={pic(28)} alt="" width={44} height={44} />
+                    <img src={pic(19)} alt="" width={44} height={44} />
                   </span>
                   Hariharan Sekar · Bengaluru
                   <span className="ea-mthumbs">
